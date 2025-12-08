@@ -21,15 +21,14 @@ def reset_table():
     lesson_code.set(0)
     teacher_name.set("")
     lesson_credits.set(0)
-
-    #status, lesson_list = LessonController.find_all()
+    status, study_list = LessonController.find_all()
 
    # for row in table.get_children():
      #   table.delete(row)
 
     #if status:
-      #  for enroll in lesson_list:
-     #       table.insert("", END, values=lesson.to_tuple())
+    for lesson in study_list:
+        table.insert("", END, values=lesson)
     #else:
    #     messagebox.showerror("Error", lesson_list)
 
@@ -111,39 +110,31 @@ def total_credit():
 Window = Tk()
 #Main Heading
 Window.title("Welcome to Curriculum App")
-Window.geometry("400x518")
+Window.geometry("435x518")
 Window.configure(bg="purple")
 
 # Label & Entry 1
 Label(Window, text="Lesson Name\n{3,30}char.",fg="darkblue",background="grey").place(x=10, y=100,width=85)
 lesson_name = StringVar()
 ttk.Combobox(Window, textvariable=lesson_name,
-             values=("Math I" , "Math II", "Engineering Mathematics" ,"Physics I","Physics II" , "Statics" , "Computer Programming(Python)")).place(x=100, y=100, width=125)
+             values=("Math I" , "Math II", "Engineering Mathematics" ,"Physics I","Physics II" , "Statics" , "Computer Programming(Python)")).place(x=100, y=100, width=160)
 
 # Label & Entry 2
 Label(Window, text="Lesson Code\n>0",fg="darkblue",background="grey").place(x=10, y=150,width=85)
 lesson_code = IntVar()
-ttk.Combobox(Window, textvariable=lesson_code,values=("352536","789485","158794","5789","976","145","29864")).place(x=100, y=150,width=125)
+ttk.Combobox(Window, textvariable=lesson_code,values=("352536","789485","158794","5789","976","145","29864")).place(x=100, y=150,width=160)
 
 # Label & Entry 3
 Label(Window, text="Teacher Name\n{3,30}char.",fg="darkblue",background="grey").place(x=10, y=200 ,width=85)
 teacher_name = StringVar()
-ttk.Combobox(Window, textvariable=teacher_name, values=("Mr.Messbah","Ms.Miri","Mr.Akbari","Ms.Gohari")).place(x=100, y=200, width=125)
+ttk.Combobox(Window, textvariable=teacher_name, values=("Mr.Messbah","Ms.Miri","Mr.Akbari","Ms.Gohari")).place(x=100, y=200, width=160)
 
 # Label & Entry 4
 Label(Window, text="Lesson Credits\n>0",fg="darkblue",background="grey").place(x=10, y=250,width=85)
 lesson_credits = IntVar()
-ttk.Combobox(Window, textvariable=lesson_credits, values=("1","2","3")).place(x=100, y=250,width=125)
+ttk.Combobox(Window, textvariable=lesson_credits, values=("1","2","3")).place(x=100, y=250,width=160)
 #---------------------------------------------------------------------------------------------------------------------------
 #                                           Description
-Label(Window, text="Instruction:"
-                   "\n1-Enter Study_Related Information."
-                   "\n2-Click on 'Show in Table' to represent your studies."
-                   "\n3-Select on your study in the table."
-                   "\n4-Your study's detail appears on each icon."
-                   "\n5-Submit your study case_by_case to database.",
-      fg="darkblue", background="grey").place(x=10, y=400, height=100, width=380)
-
 Label(Window, text="Please Pay Attention!!!"
                    "\n\n\nAfter executing the program,"
                    "\nyour data won't be saved"
@@ -151,16 +142,25 @@ Label(Window, text="Please Pay Attention!!!"
                    "\nautomatically,"
                    "\n\n---unless---"
                    "\nyou 'Submit' it to databse.",
-      fg="darkblue",background="lightblue").place(x=230, y=100,height=190,width=159)
+      fg="darkblue",background="lightblue").place(x=265, y=100,height=190,width=159)
+
+Label(Window, text="Instruction:"
+                   "\n1-Enter Study_Related Information."
+                   "\n2-Click on 'Show in Table' to represent your studies."
+                   "\n3-Select on your study in the table."
+                   "\n4-Your study's detail appears on each icon."
+                   "\n5-Submit your study case_by_case to database.",
+      fg="darkblue", background="grey").place(x=10, y=400, height=100, width=415)
+
 #---------------------------------------------------------------------------------------------------------------------------------
 
 
 #---------------------------------------------------------------------------------------------------------------------------------
 #Buttons
-Button(Window, text="Show in Table", command=receive_data , width=53,fg="darkblue", background="lightgreen").place(x=10, y=305)
-Button(Window, text="Submit to Database", command=save_click,fg="darkblue", background="grey").place(x=10, y=350 ,width=130)
-Button(Window, text="Edit Lesson", command=edit_click,fg="darkblue", background="grey").place(x=142, y=350 ,width=115)
-Button(Window, text="Remove from Database" , command=remove_click,fg="darkblue", background="grey").place(x=260, y=350 ,width=130)
+Button(Window, text="Show in Table", command=receive_data , width=58,fg="darkblue", background="lightgreen").place(x=10, y=305)
+Button(Window, text="Submit to Database", command=save_click,fg="darkblue", background="grey").place(x=10, y=350 ,width=140)
+Button(Window, text="Edit Lesson", command=edit_click,fg="darkblue", background="grey").place(x=152, y=350 ,width=125)
+Button(Window, text="Remove from Database" , command=remove_click,fg="darkblue", background="grey").place(x=280, y=350 ,width=144)
 
 
 #Headings _Region Table
@@ -168,7 +168,7 @@ table = ttk.Treeview(Window , columns=(1,2,3,4)
                      , height=10 , show="headings")
 #Column 1
 table.heading(1, text="Lesson Name")
-table.column(1, width=50)
+table.column(1, width=170)
 
 #Column 2
 table.heading(2, text="Lesson Code")
@@ -179,10 +179,10 @@ table.heading(3, text="Teacher Name")
 table.column(3, width=50)
 
 #Column4
-table.heading(4, text="Lesson Credits")
-table.column(4, width=50)
+table.heading(4, text="Credits")
+table.column(4, width=10)
 
-table.place(x=10, y=10 , width=380, height=75)
+table.place(x=10, y=10 , width=415, height=75)
 table.bind("<<TreeviewSelect>>", select_lesson)
 
 reset_table()
