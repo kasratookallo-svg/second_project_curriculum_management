@@ -154,8 +154,6 @@ Label(Window, text="Please Pay Attention!!!"
       fg="darkblue",background="lightblue").place(x=230, y=100,height=190,width=159)
 #---------------------------------------------------------------------------------------------------------------------------------
 
-
-#---------------------------------------------------------------------------------------------------------------------------------
 #Buttons
 Button(Window, text="Show in Table", command=receive_data , width=53,fg="darkblue", background="lightgreen").place(x=10, y=305)
 Button(Window, text="Submit to Database", command=save_click,fg="darkblue", background="grey").place(x=10, y=350 ,width=130)
