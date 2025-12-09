@@ -23,14 +23,14 @@ def reset_table():
     lesson_credits.set(0)
     status, study_list = LessonController.find_all()
 
-   # for row in table.get_children():
-     #   table.delete(row)
+    for row in table.get_children():
+        table.delete(row)
 
-    #if status:
-    for lesson in study_list:
-        table.insert("", END, values=lesson)
-    #else:
-   #     messagebox.showerror("Error", lesson_list)
+    if status:
+        for lesson in study_list:
+            table.insert("", END, values=lesson)
+    else:
+       messagebox.showerror("Error","No lesson found")
 
 #------------------------------------------------------------------------------------------
 #                                               Getting Lesson Data
@@ -45,15 +45,14 @@ def receive_data():
         )
         lesson.validation()
         study_list.append(lesson)
-        #lesson.save()
+        lesson.save()
         print("-" * 150)
 
         #To insert Data into the table
         table.insert(""  , END , values=lesson.to_tuple())
         messagebox.showinfo("Data Saved." , "Lesson saved in the table successfully.")
-        print("Your Stduies include : ",study_list)
+        print("Your Curriculum includes : ",study_list)
         print("-" * 150)
-        reset_table()
     except Exception as e:
         messagebox.showerror("Error", f"Something went wrong:{e}")
 
@@ -117,7 +116,7 @@ Window.configure(bg="purple")
 Label(Window, text="Lesson Name\n{3,30}char.",fg="darkblue",background="grey").place(x=10, y=100,width=85)
 lesson_name = StringVar()
 ttk.Combobox(Window, textvariable=lesson_name,
-             values=("Math I" , "Math II", "Engineering Mathematics" ,"Physics I","Physics II" , "Statics" , "Computer Programming(Python)")).place(x=100, y=100, width=160)
+             values=( "Computer Programming.Python", "Math I" , "Math II", "Engineering Mathematics" ,"Physics I","Physics II" , "Statics" )).place(x=100, y=100, width=160)
 
 # Label & Entry 2
 Label(Window, text="Lesson Code\n>0",fg="darkblue",background="grey").place(x=10, y=150,width=85)

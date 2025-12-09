@@ -28,7 +28,7 @@ class   Curriculum:
     # Method_function
     def validation(self ):
 
-        if not re.match(r"^[a-zA-Z0-9\s]{3,40}$",self.lesson_name):
+        if not re.match(r"^[a-zA-Z0-9\s\.]{3,40}$",self.lesson_name):
             raise NameError("Lesson Name Error!!!!")
 
         if not (type(self.lesson_code) == int and self.lesson_code > 0):

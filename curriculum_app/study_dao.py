@@ -9,12 +9,31 @@
 import sqlite3
 
 #                                             Database_related Functions
+with sqlite3.connect("Curriculum_backup_db") as connection:
+    cursor = connection.cursor()
+
+    cursor.execute("""
+        create table if not exists lessons_backup (
+            lesson_name text,
+    lesson_code integer primary key,
+    teacher_name text,
+    lesson_credits integer
+        )
+    """)
+
+    connection.commit()
+
 class LessonDataAccess:
     def save(self, lesson):
         with  sqlite3.connect("Curriculum_backup_db") as connection:
             cursor = connection.cursor()
-            cursor.execute("insert into lessons_backup (lesson_name,lesson_code,teacher_name,lesson_credits) values (?, ?, ?, ?)",
-                           [lesson.lesson_name, lesson.lesson_code, lesson.teacher_name, lesson.lesson_credits]
+            cursor.execute("insert into lessons_backup (lesson_name,lesson_code,teacher_name,lesson_credits)"
+                           " values (?, ?, ?, ?)",
+                           [
+                            lesson.lesson_name,
+                            lesson.lesson_code,
+                            lesson.teacher_name,
+                            lesson.lesson_credits]
                            )
             connection.commit()
 
@@ -23,7 +42,11 @@ class LessonDataAccess:
         with  sqlite3.connect("Curriculum_backup_db") as connection:
             cursor = connection.cursor()
             cursor.execute("update lessons_backup set lesson_name=?, teacher_name=?, lesson_credits=? where lesson_code=?",
-                           [lesson.lesson_name, lesson.teacher_name, lesson.lesson_credits , lesson.lesson_code]
+                           [
+                            lesson.lesson_name,
+                            lesson.teacher_name,
+                            lesson.lesson_credits ,
+                            lesson.lesson_code]
                            )
             connection.commit()
 
