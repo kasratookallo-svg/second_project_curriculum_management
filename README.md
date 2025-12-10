@@ -3,7 +3,7 @@ Functions are based on Class_method.
 
 << Features of the Program >>
 
-'Show in List' Button regarding representing Lesson in a table.
+'Show in Table' Button regarding representing Lesson in a table.
 
 ( Database_related merits ) ---->> for future reference :
 
