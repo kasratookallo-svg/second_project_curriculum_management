@@ -3,13 +3,13 @@ Functions are based on Class_method.
 
 << Features of the Program >>
 
-'Show in Table' Button regarding representing Lesson in a table.
+- 'Show in Table' Button regarding representing Lesson in a table.
 
 ( Database_related merits ) ---->> for future reference :
 
-'Submit to Database'
-'Edit databse'_ Based on Id
-'Remove from Databse'
+- 'Submit to Database'
+- 'Edit databse'_ Based on Id
+- 'Remove from Databse'
 
 << Additional Features >>
 
