@@ -13,7 +13,7 @@ Functions are based on Class_method.
 
 << Additional Features >>
 
-- Representing Lesson's detail in a format_style for printing.
+- Representing Lesson's details in a format_style for printing.
 - Through Window, there are some suggestions for all details displayed in respective Entry_Region, which can be selected by a click.
 
 << Structure and Folder >>
