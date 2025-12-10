@@ -20,5 +20,5 @@ Functions are based on Class_method.
 
 - Study_model file : Lesson class defines the structure of a Study record.
 - Study_controller file : Handles validation and connects the GUI to the database.
-- Study_dao file : CurriculumDataAccess manages database operations (save, edit, remove, find).
+- Study_dao file : LessonDataAccess manages database operations (save, edit, remove, find).
 - Study_view file : Tkinter GUI for managing Lesson (add, edit, remove, view).
