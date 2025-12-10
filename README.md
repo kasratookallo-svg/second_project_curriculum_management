@@ -1,1 +1,23 @@
-This Python program is based on Class_method and oop.
+This Python program is prepared to receive Study_relted information while shwinh them in a list and formating them simultaneously before saving them in a database. Functions are based on Class_method and oop.
+
+<< Features of the Program >>
+
+'Show in List' Button regarding representing Lesson in a table.
+
+( Database_related merits ) ---->> for future reference :
+
+'Submit to Database'
+'Edit databse'_ Based on Id
+'Remove from Databse'
+
+<< Additional Features >>
+
+- Representing Lesson's detail in a format_style for printing.
+- Through Window, there are some suggestions for all details displayed in respective Entry_Region, which can be selected by a click.
+
+<< Structure and Folder >>
+
+- Study_model file : Lesson class defines the structure of a Study record.
+- Study_controller file : Handles validation and connects the GUI to the database.
+- Study_dao file : CurriculumDataAccess manages database operations (save, edit, remove, find).
+- Study_view file : Tkinter GUI for managing Lesson (add, edit, remove, view).
