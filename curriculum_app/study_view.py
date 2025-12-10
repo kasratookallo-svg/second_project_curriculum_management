@@ -104,6 +104,7 @@ def remove_click():
 def total_credit():
     pass
 
+
 #------------------------------------------------------------------------------------------------------
 #                                             Table Starts Here
 Window = Tk()
@@ -186,8 +187,9 @@ table.place(x=430, y=10 , width=420, height=375)
 table.bind("<<TreeviewSelect>>", select_lesson)
 
 # region total price label
-final_total_label = Label(Window, text="Total Credits: 0 ", font=("Arial", 14, "bold"), fg="blue")
+final_total_label = Label(Window, text="Total Credits: ", font=("Arial", 14, "bold"), fg="blue")
 final_total_label.place(x=435, y=350)
+final_total_label.config(text=f"Total Credits: ")
 
 reset_table()
 Window.mainloop()
