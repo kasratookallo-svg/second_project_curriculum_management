@@ -1,4 +1,5 @@
-This Python program is prepared to receive Study_related information while shwinh them in a list and formating them simultaneously before saving them in a database. Functions are based on Class_method and oop.
+This Python program is prepared to receive Study_related information while showing them in a list and formating them simultaneously, before saving them in a database.
+Functions are based on Class_method.
 
 << Features of the Program >>
 
