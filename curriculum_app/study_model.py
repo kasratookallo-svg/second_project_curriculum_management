@@ -19,6 +19,7 @@ class   Curriculum:
         self.lesson_code = lesson_code
         self.teacher_name = teacher_name
         self.lesson_credits = lesson_credits
+
         self.lesson_list = []
 
     # Method_Show Result
