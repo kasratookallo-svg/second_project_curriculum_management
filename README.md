@@ -8,7 +8,7 @@ Functions are based on Class_method.
 ( Database_related merits ) ---->> for future reference :
 
 - 'Submit to Database'
-- 'Edit databse'_ Based on Id
+- 'Edit databse'_ Based on Lesson_code
 - 'Remove from Databse'
 
 << Additional Features >>
