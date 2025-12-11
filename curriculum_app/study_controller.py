@@ -9,7 +9,7 @@
 from study_dao import LessonDataAccess
 from study_model import Curriculum
 
-# Since Database Controller is a Class_Method, therefore requires date.
+# Since Database Controller is a Class_Method.
 class LessonController:
 
     @staticmethod
