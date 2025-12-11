@@ -22,7 +22,7 @@ with sqlite3.connect("Curriculum_backup_db") as connection:
     """)
 
     connection.commit()
-
+# Submit Button reference
 class LessonDataAccess:
     def save(self, lesson):
         with  sqlite3.connect("Curriculum_backup_db") as connection:
@@ -41,7 +41,7 @@ class LessonDataAccess:
                            )
             connection.commit()
 
-
+    # Edit Button reference
     def edit(self, lesson):
         with  sqlite3.connect("Curriculum_backup_db") as connection:
             cursor = connection.cursor()
@@ -53,6 +53,8 @@ class LessonDataAccess:
                             lesson.lesson_code]
                            )
             connection.commit()
+
+    # Remove Button reference
 
     def remove(self, lesson_code):
         with  sqlite3.connect("Curriculum_backup_db") as connection:
