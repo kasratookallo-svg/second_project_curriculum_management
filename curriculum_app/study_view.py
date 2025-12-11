@@ -56,8 +56,11 @@ def receive_data():
     except Exception as e:
         messagebox.showerror("Error", f"Something went wrong:{e}")
 
+    # Print Total Credits in recept
     total_credits_table = sum_credit()
     print("Total Credits : " , total_credits_table)
+
+    # Insert Total Credits to table
     final_total_label.config(text=f"Total Credits: {total_credits_table} ")
 
 
