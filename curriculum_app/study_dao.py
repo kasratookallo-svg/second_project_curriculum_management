@@ -27,7 +27,11 @@ class LessonDataAccess:
     def save(self, lesson):
         with  sqlite3.connect("Curriculum_backup_db") as connection:
             cursor = connection.cursor()
-            cursor.execute("insert into lessons_backup (lesson_name,lesson_code,teacher_name,lesson_credits)"
+            cursor.execute("insert into lessons_backup ("
+                           "lesson_name,"
+                           "lesson_code,"
+                           "teacher_name,"
+                           "lesson_credits)"
                            " values (?, ?, ?, ?)",
                            [
                             lesson.lesson_name,

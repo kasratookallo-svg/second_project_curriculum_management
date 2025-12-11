@@ -56,6 +56,11 @@ def receive_data():
     except Exception as e:
         messagebox.showerror("Error", f"Something went wrong:{e}")
 
+    total_credits_table = sum_credit()
+    print("Total Credits : " , total_credits_table)
+    final_total_label.config(text=f"Total Credits: {total_credits_table} ")
+
+
 def select_lesson(event):
     lesson = table.item(table.focus())["values"]
     lesson_name.set(lesson[0])
@@ -101,8 +106,15 @@ def remove_click():
 
 # ---------------------------
 
-def total_credit():
-    pass
+def sum_credit():
+    total_credit = 0
+    for lesson in study_list:
+        total_credit += lesson.lesson_credits
+    return total_credit
+
+
+
+
 
 
 #------------------------------------------------------------------------------------------------------
