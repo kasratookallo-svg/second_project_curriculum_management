@@ -11,7 +11,6 @@ from study_model import Curriculum
 
 # Since Database Controller is a Class_Method, therefore requires date.
 class LessonController:
-    @staticmethod
 
     @staticmethod
     def save(lesson_name, lesson_code, teacher_name, lesson_credits):
