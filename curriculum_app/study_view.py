@@ -117,9 +117,6 @@ def sum_credit():
 
 
 
-
-
-
 #------------------------------------------------------------------------------------------------------
 #                                             Table Starts Here
 Window = Tk()
@@ -127,27 +124,28 @@ Window = Tk()
 Window.title("Welcome to Curriculum App")
 Window.geometry("860x400")
 Window.configure(bg="purple")
+Window.resizable(False, False)
                                             # Region_handling
 # Label & Entry 1
-Label(Window, text="Lesson Name\n{3,30}char.",fg="darkblue",background="grey").place(x=10, y=10,width=85)
+Label(Window, text="Lesson Name\n{3,30}char.",fg="white",background="grey").place(x=10, y=10,width=85)
 lesson_name = StringVar()
 ttk.Combobox(Window, textvariable=lesson_name,
              values=( "Computer Programming.Python", "Math I" , "Math II", "Engineering Mathematics" ,"Physics I","Physics II" , "Statics" )).place(x=100, y=10, width=160)
 
 # Label & Entry 2
-Label(Window, text="Lesson Code\n>0",fg="darkblue",background="grey").place(x=10, y=60,width=85)
+Label(Window, text="Lesson Code\n>0",fg="white",background="grey").place(x=10, y=60,width=85)
 lesson_code = IntVar()
 ttk.Combobox(Window, textvariable=lesson_code,values=("352536","789485","158794","5789","976","145","29864")).place(x=100, y=60,width=160)
 
 # Label & Entry 3
-Label(Window, text="Teacher Name\n{3,30}char.",fg="darkblue",background="grey").place(x=10, y=110 ,width=85)
+Label(Window, text="Teacher Name\n{3,30}char.",fg="white",background="grey").place(x=10, y=110 ,width=85)
 teacher_name = StringVar()
 ttk.Combobox(Window, textvariable=teacher_name,
              values=("Mr.Messbah","Ms.Miri","Mr.Akbari","Ms.Gohari")).place(x=100, y=110, width=160)
 
 # Label & Entry 4
 Label(Window, text="Lesson Credits\n>0",
-      fg="darkblue",background="grey").place(x=10, y=160,width=85)
+      fg="white",background="grey").place(x=10, y=160,width=85)
 lesson_credits = IntVar()
 ttk.Combobox(Window, textvariable=lesson_credits,
              values=("1","2","3")).place(x=100, y=160,width=160)
